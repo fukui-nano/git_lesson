@@ -1,0 +1,155 @@
+@use '../global' as *;
+@use 'keyframe' as *;
+@use 'vendor' as *;
+
+// @use 'sass:color';
+// @use 'sass:list';
+// @use 'sass:map';
+// @use 'sass:math';
+// @use 'sass:meta';
+// @use 'sass:selector';
+// @use 'sass:string';
+
+:root {
+  --vw: 1vw;
+  --vh: 1vh;
+  --scrollbar-gap: 0px;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  @media (prefers-reduced-motion: reduce) {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+
+:where(html) {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%; // 10px
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+:where(body) {
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  word-break: break-all;
+  font-family: $font-family-base;
+  line-height: 1.8;
+  color: $pjc-txt-base;
+  font-size: size(14, 16);
+}
+
+:where(main) {
+  overflow-x: hidden;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: 1em;
+  font-weight: inherit;
+}
+
+:where(i, cite, em, address, dfn) {
+  font-style: normal;
+}
+
+:where(a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(ul, ol) {
+  list-style: none;
+  padding: 0;
+}
+
+:where(iframe, img, input, video, select, textarea) {
+  height: auto;
+  max-width: 100%;
+}
+
+:where(small) {
+  font-size: 100%;
+}
+
+:where(input, select, textarea) {
+  background-color: transparent;
+  border: 1px solid WindowFrame;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  padding: 0.25em 0.5em;
+}
+
+:where(select) {
+  -webkit-appearance: none;
+  appearance: none;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
+    no-repeat right center / 1em;
+  border-radius: 0;
+  padding-right: 1em;
+}
+
+:where(select[multiple]) {
+  background-image: none;
+}
+
+:where(input[type='text']) {
+  line-height: normal;
+}
+:where([type='text']::-ms-clear) {
+  visibility: hidden;
+}
+
+:where([type='password']::-ms-reveal) {
+  visibility: hidden;
+}
+
+:where([type='number']::-webkit-outer-spin-button),
+:where([type='number']::-webkit-inner-spin-button) {
+  appearance: none;
+}
+
+:where(fieldset) {
+  border: 0;
+  min-width: auto;
+  padding: 0;
+}
+
+:where(legend) {
+  display: block;
+}
+
+:where([type='color' i], [type='range' i]) {
+  border-width: 0;
+  padding: 0;
+}
+
+:where(button, input[type='submit']) {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  appearance: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+:where([aria-disabled='true']),
+:where([disabled]) {
+  cursor: not-allowed;
+}
